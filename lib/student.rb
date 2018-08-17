@@ -11,7 +11,7 @@ class Student
 
   def self.all
     res = DB[:conn].execute("SELECT * FROM students")
-    res.each{|row|
+    res.map{|row|
       self.new_from_db(row)
     }
   end
